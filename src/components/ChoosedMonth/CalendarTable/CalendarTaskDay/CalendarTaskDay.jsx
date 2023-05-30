@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { TaskItem } from '../CalendarTable.styled';
 
 export const CalendarTaskDay = ({ task }) => {
-  // console.log(task);
   const navigate = useNavigate();
   let priorityColor = '';
   let priorityTextColor = '';
@@ -19,12 +18,12 @@ export const CalendarTaskDay = ({ task }) => {
     priorityTextColor = 'var(--task-high-color)';
   }
   const handleTaskItemClick = () => {
-    navigate(`/calendar/day/${task.createAt}`); 
+    navigate(`/calendar/day/${task.createAt}`);
   };
   return (
     <TaskItem
       type="button"
-      onClick={handleTaskItemClick} 
+      onClick={handleTaskItemClick}
       style={{ backgroundColor: priorityColor, color: priorityTextColor }}
     >
       {task.title}
